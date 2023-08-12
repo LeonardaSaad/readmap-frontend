@@ -1,0 +1,98 @@
+Baixar:
+    Extensão = Live Sass Compiler
+
+Criar arquivo:
+    Folder = css
+        File = style.css
+        File = style.scss
+
+
+Variáveis:
+    $primaryColor: #d62424;
+    $secundaryColor: #210bee;
+    $neutraColor: #333;
+
+Functions:
+    @mixin flexCenter($justify_content, $flex_direction) {
+        display: flex;
+        justify-content: $justify_content;
+        align-items: center;
+        flex-direction: $flex_direction;
+    }
+    
+    body {
+        @include flexCenter(center, column);
+    }
+
+    or
+
+    @function weight($weight-name) {
+        @return map-get($font-weights, $weight-name);
+    }
+
+    body {
+        font-weight: weight(bold);
+    }
+
+
+File separado:
+    Name = _variables.scss
+
+Import Files:
+    @import "./_variables"
+
+Map:
+    $font-weights: (
+        "regular": 400,
+        "medium": 500,
+        "bold": 700,
+    );
+
+    body {
+        font-weight: map-get($font-weights, bold);
+    }
+
+    +++
+
+    @function weight($weight-name) {
+        @return map-get($font-weights, $weight-name);
+    }
+
+    body {
+        font-weight: weight(bold);
+    }
+
+Parentes:
+    body {
+        weight: 500px;
+
+        p {
+            weight100%
+        }
+    }
+
+    or
+
+    .main {
+        weight: 500px;
+        height: 700px;
+
+        $_paragraph {
+            font-weight: 800;
+        }
+    }
+
+
+Extend
+    Copia atributos dados para outros elementos
+
+    .main {
+        #{&}_paragraph1 {
+            background-color: #5af362;
+        }
+
+        #{&}_paragraph2 {
+            @extend .main_paragraph1;
+            border: 3px solid #fa34d7;
+        }
+    }

@@ -1,0 +1,7 @@
+Processo pelo qual o interpretador parece mover a declaração de funções, variáveis ou classes para o topo de seu escopo, antes da execução do código.
+
+Obs: termo original "HoistableDeclaration"
+
+Declarações incluídas: function, function*, async function, async function* e var.
+
+Functions ficarão em mais no topo do que as variáveis.

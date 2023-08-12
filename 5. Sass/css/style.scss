@@ -1,0 +1,55 @@
+@import "./variable";
+@import "./_balls.scss";
+
+@mixin flexCenter($justify_content, $flex_direction) {
+    display: flex;
+    justify-content: $justify_content;
+    align-items: center;
+    flex-direction: $flex_direction;
+}
+
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700,
+);
+
+@function fontW($weight-name) {
+    @return map-get($font-weights, $weight-name);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @include flexCenter(center, column);
+    width: 100%;
+    height: 100vh;
+    font-weight: fontW(regular);
+    background-color: #1a1a1a;
+
+    p {
+        font-weight: fontW(bold);
+        font-size: 30px;
+    }
+
+    .balls {
+        @include flexCenter(center, row)
+    }
+}
+
+.main {
+    margin: 5vh 5vw;
+
+    &_paragraph {
+        color: white;
+    }
+
+    &_paragraph2 {
+        @extend .main_paragraph;
+        font-weight: fontW(bold);
+    }
+}

@@ -1,0 +1,28 @@
+html,
+body {
+   margin: 0;
+   padding: 0;
+}
+
+
+body {
+   background: rgb(21, 23, 37);
+   color: #fff;
+}
+
+.container {
+   padding: 2vw;
+   margin: 10vh 20vw 0 20vw;
+   background: rgb(33, 35, 61);
+   border-radius: .5em;
+   display: flex;
+   flex-direction: row;
+}
+
+.key {
+   color: rgb(143, 143, 143);
+}
+
+.title {
+   margin: 0 0 0 3vw;
+}

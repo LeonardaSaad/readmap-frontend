@@ -1,0 +1,18 @@
+Fetch
+	Envia requisições assíncronas para o servidor. Serve para acessarmos/escrevermos dados em apis externas.
+	
+	Code:
+		fetch(url)
+			.then(response => {})
+			.catch(error => error)
+
+Ajax xhr
+	OnReadystateChange: quando o estado muda
+	ReadyState: representa o estado do requerimento (numerico).
+		0: requisição não inicializada
+		1: Estabeleceu requisição com o servidor
+		2: Pedido recebido
+		3: Processando Pedido
+		4: Solicitação concluída e respota pronta.
+	.open(): informa qual o verbo("GET","POST") e qual a url
+	.send(): envia as configurações
